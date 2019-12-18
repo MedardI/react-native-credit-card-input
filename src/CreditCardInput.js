@@ -24,7 +24,9 @@ const s = StyleSheet.create({
   },
   verticalForm: {
     marginTop: 20,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    paddingVertical: 15,
+    flex: 1
   },
   verticalFormRow: {
     flexDirection: "row",

@@ -96,7 +96,7 @@ export default class CardView extends Component {
 
   static defaultProps = {
     name: "",
-    cvcTextColor: 'rgba(255, 255, 255, 0.8)',
+    cvcTextColor: '#00a5db',
     placeholder: {
       number: "•••• •••• •••• ••••",
       name: "FULL NAME",
