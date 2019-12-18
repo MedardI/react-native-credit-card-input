@@ -24,11 +24,13 @@ const s = StyleSheet.create({
   },
   verticalForm: {
     marginTop: 20,
+    backgroundColor: '#fff'
   },
   verticalFormRow: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 10
   },
   inputContainer: {
     marginLeft: 20,
