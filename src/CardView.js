@@ -96,6 +96,7 @@ export default class CardView extends Component {
 
   static defaultProps = {
     name: "",
+    cvcTextColor: 'rgba(255, 255, 255, 0.8)',
     placeholder: {
       number: "•••• •••• •••• ••••",
       name: "FULL NAME",
@@ -112,7 +113,7 @@ export default class CardView extends Component {
   render() {
     const { focused,
       brand, name, number, expiry, cvc, customIcons,
-      placeholder, imageFront, imageBack, scale, fontFamily } = this.props;
+      placeholder, imageFront, imageBack, scale, fontFamily, cvcTextColor } = this.props;
 
     const Icons = { ...defaultIcons, ...customIcons };
     const isAmex = brand === "american-express";
@@ -157,7 +158,7 @@ export default class CardView extends Component {
           </ImageBackground>
           <ImageBackground style={[BASE_SIZE, s.cardFace, transform]}
             source={imageBack}>
-              <Text style={[s.baseText, s.cvc, !cvc && s.placeholder, focused === "cvc" && s.focused]}>
+              <Text style={[{backgroundColor: "transparent", color: cvcTextColor}, s.cvc, !cvc && s.placeholder, focused === "cvc" && s.focused]}>
                 { !cvc ? placeholder.cvc : cvc }
               </Text>
           </ImageBackground>

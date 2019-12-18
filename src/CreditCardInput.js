@@ -78,6 +78,7 @@ export default class CreditCardInput extends Component {
 
     verticalForm: PropTypes.bool,
     verticalFormRows: PropTypes.array,
+    cvcTextColor: PropTypes.string
   };
 
   static defaultProps = {
@@ -254,7 +255,7 @@ export default class CreditCardInput extends Component {
   render() {
     const {
       cardImageFront, cardImageBack, values: { number, expiry, cvc, name, type },
-      focused, requiresName, cardScale, cardFontFamily, cardBrandIcons,
+      focused, requiresName, cardScale, cardFontFamily, cardBrandIcons, cvcTextColor
     } = this.props;
 
     return (
@@ -269,7 +270,8 @@ export default class CreditCardInput extends Component {
           name={requiresName ? name : " "}
           number={number}
           expiry={expiry}
-          cvc={cvc} />
+          cvc={cvc}
+          cvcTextColor={cvcTextColor}/>
 
           { this.renderForm() }
       </View>
