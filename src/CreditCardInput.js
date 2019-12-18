@@ -173,7 +173,7 @@ export default class CreditCardInput extends Component {
             keyboardType="numeric"
             containerStyle={[
               s.inputContainer, inputContainerStyle,
-              { width: fieldWidth || CARD_NUMBER_INPUT_WIDTH }]} />
+              fieldWidth === '100%'? {}: { width: fieldWidth || CARD_NUMBER_INPUT_WIDTH }]} />
         );
       case "expiry":
         return (
@@ -182,27 +182,27 @@ export default class CreditCardInput extends Component {
             keyboardType="numeric"
             containerStyle={[
               s.inputContainer,
-              inputContainerStyle, { width: fieldWidth || EXPIRY_INPUT_WIDTH }]} />
+              inputContainerStyle, fieldWidth === '100%'? {}: { width: fieldWidth || EXPIRY_INPUT_WIDTH }]} />
         );
       case "cvc":
         return (
           <CCInput {...this._inputProps(fieldName)}
             key={fieldName}
             keyboardType="numeric"
-            containerStyle={[s.inputContainer, inputContainerStyle, { width: fieldWidth || CVC_INPUT_WIDTH }]} />
+            containerStyle={[s.inputContainer, inputContainerStyle, fieldWidth === '100%'? {}: { width: fieldWidth || CVC_INPUT_WIDTH }]} />
         );
       case "name":
         return (
           <CCInput {...this._inputProps(fieldName)}
             key={fieldName}
-            containerStyle={[s.inputContainer, inputContainerStyle, { width: fieldWidth || NAME_INPUT_WIDTH }]} />
+            containerStyle={[s.inputContainer, inputContainerStyle, fieldWidth === '100%'? {}: { width: fieldWidth || NAME_INPUT_WIDTH }]} />
         );
       case "postalCode":
         return (
           <CCInput {...this._inputProps("postalCode")}
             key={fieldName}
             keyboardType="numeric"
-            containerStyle={[s.inputContainer, inputContainerStyle, { width: fieldWidth || POSTAL_CODE_INPUT_WIDTH }]} />
+            containerStyle={[s.inputContainer, inputContainerStyle, fieldWidth === '100%'? {}: { width: fieldWidth || POSTAL_CODE_INPUT_WIDTH }]} />
         );
       default:
         return null;
