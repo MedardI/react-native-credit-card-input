@@ -77,7 +77,7 @@ export default class CCInput extends Component {
         onPress={this.focus}
         activeOpacity={0.99}>
         <View style={[containerStyle]}>
-          { !!label && <Text style={[labelStyle]}>{label}</Text>}
+          { !!label && <Text maxFontSizeMultiplier={1.5} style={[labelStyle]}>{label}</Text>}
           <TextInput ref="input"
             {...additionalInputProps}
             keyboardType={keyboardType}
